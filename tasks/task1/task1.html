@@ -3,20 +3,11 @@
 <head>
     <title>Maven 101</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="site/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="site/libs/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"/>
-    <link href="site/libs/style.css" rel="stylesheet"/>
-
-    <script src="site/libs/jquery/jquery-2.1.4.min.js"></script>
-    <script src="site/libs/bootstrap/js/bootstrap.min.js"></script>
-
+    <link rel="import" href="site/libs/scripts.html"/>
 
 </head>
 <body role="document">
-    NAVIGATION
+    <div id="navigation"></div>
 
     <div class="container" role="main" style="margin-top: 80px">
         <div class="row">
@@ -34,7 +25,7 @@
                 </ul>
             </nav>
             <div class="col-md-9">
-                <h1 id="welcome"> Welcome to Maven 101</h1>
+                <h1 id="welcome"> Task1</h1>
 
                 <p>
                     Welcome to the Maven 101 training course. This course will teach you the basics of maven and how we use it.
@@ -59,26 +50,26 @@
                 </p>
             </div>
         </div>
-    </div>
 
-    <script>
-        $(document).ready(function() {
+        <script>
+            $(document).ready(function() {
+                $('#navigation').load("site/libs/navigation.html");
 
-            var offset = 160;
+                var offset = 160;
 
-            $('body').scrollspy({
-                target: '.bs-docs-sidebar',
-                offset: offset
+                $('body').scrollspy({
+                    target: '.bs-docs-sidebar',
+                    offset: offset
+                });
+
+
+
+                $('#sidebar').find('li a').click(function(event) {
+                    event.preventDefault();
+                    $($(this).attr('href'))[0].scrollIntoView();
+                    scrollBy(0, -offset);
+                });
             });
-
-
-
-            $('#sidebar').find('li a').click(function(event) {
-                event.preventDefault();
-                $($(this).attr('href'))[0].scrollIntoView();
-                scrollBy(0, -offset);
-            });
-        });
-    </script>
+        </script>
 </body>
 </html>
