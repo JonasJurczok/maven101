@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>Theory - Maven 101</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Maven 101</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Introduction</a>
+                </li>
+            
+            
+            
+                <li class="active">
+                    <a href="./">Theory</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tasks <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../task1/task1/">Task1</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="..">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../task1/task1/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#theoretical-introduction">Theoretical introduction</a></li>
+        
+            <li><a href="#what-is-a-build-tool">What is a build tool?</a></li>
+        
+            <li><a href="#maven-specific-details">Maven specific details</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="theoretical-introduction">Theoretical introduction</h1>
+<p>This page will give you a short theoretical overview about maven.
+As it is an Apache project there is extensive documentation available
+under <a href="https://maven.apache.org/">https://maven.apache.org/</a>.</p>
+<h2 id="what-is-a-build-tool">What is a build tool?</h2>
+<p>Maven is basically "just another build tool".
+Build tools take care of the more tedious tasks of software development.</p>
+<h3 id="dependency-management">Dependency management</h3>
+<p>In former times you would download your dependencies yourself, extract them to your project and then modify the classpath manually to use them.
+Build tools take care of this for you. You just specify the dependencies and the tool downloads and integrates them.</p>
+<h3 id="testing">Testing</h3>
+<p>Buildtools also take care of your tests. As soon as you initiate a build the tool will run your tests
+for you and then give you feedback if your tests succeeded. If not it will also prevent the creation of a build result
+so that you cannot ship a broken application by accident.</p>
+<h3 id="deployable-artifacts">Deployable artifacts</h3>
+<p>The tool will also give you a deployable artifact in the end. With this mechanism you can take the result of the build
+and ship it right away. This is essential for a continuous delivery pipeline.</p>
+<h2 id="maven-specific-details">Maven specific details</h2>
+<h3 id="identifying-artifacts">Identifying artifacts</h3>
+<p>Maven calls the result of a build an Artifact. This can be anything, from the standard jar over the documentation zip files
+up to binaries. The only thing that matters is that it is some file that can be identified.</p>
+<p>To identify and share an artifact maven uses three distinct values.</p>
+<ul>
+<li>the groupId</li>
+<li>the artifactId</li>
+<li>the version</li>
+</ul>
+<h4 id="groupid">groupId</h4>
+<p>The groupId is defining a group of artifacts like package names in Java. They also follow the same conventions of
+backwards domains. If you want to build something for the Zalando Mentoring for example, the groupId might be</p>
+<pre><code>de.zalando.mentoring
+</code></pre>
+
+<h4 id="artifactid">artifactId</h4>
+<p>The artifactId serves the same function as a Java class name. It is a unique identifier within a group of artifacts.
+To stick to the example from above a typical artifactId for the mentoring project could be</p>
+<pre><code>maven-101
+</code></pre>
+
+<h3 id="versioning">Versioning</h3>
+<p>The version is actually just a string. So in theory you could put whatever you want here. It is highly recommended
+though to stick to a versioning scheme that is easily readable like <a href="http://semver.org/">semantic versioning</a>.</p>
+<p><strong>Important:</strong></p>
+<blockquote>
+<p>Versions have to be unique on any given repository. To circumvent that you can append the String '-SNAPSHOT' to your version.
+This will tell maven to treat the version as non unique.</p>
+<p>This has implications though:</p>
+<p>Referencing a snapshot version as a dependency does not guarantee anything! Everything can change from one build to the next!</p>
+</blockquote>
+<h3 id="storing-and-sharing-artifacts">Storing and sharing artifacts</h3>
+<p>We have seen the three identifiers of an artifact now. But how do they play together?</p>
+<p>As written before the main reason for using a build tool is to get rid of downloading dependencies manually. To
+achieve this maven stores all artifacts in repositories. A repository is basically a server that can be accessed via
+HTTP. All artifacts are identified by the triplet described before. The groupId describes the folder, the artifactId
+the filename and the version the version suffix of the desired artifact.</p>
+<p>The interesting part about this is that the maven server makes sure that versions are unique. If you push <code>de.zalando
+.mentoring:maven-101:0.0.1</code> to a repository this version is taken and can not be overwritten. This guarantees that
+everyone who references this artifact as a dependency will receive the exact same file every single time. Therefore
+maven is really reliable (unless the repository is shut down of course :) ).</p>
+<p>Of course there are scenarios where this behaviour is not desired. To circumvent the uniqueness of an artifact you can
+append <code>-SNAPSHOT</code> to your version. This removes the unique constraint and the artifact can be overwritten. This
+should be handled with care as a SNAPSHOT dependency can change drastically, possibly breaking contracts, on every
+single update!</p>
+<p><strong>Important:</strong></p>
+<blockquote>
+<p>Maven uses a local cache in your home/.m2 directory. As this is a local directory which belongs to you, you can do
+whatever you want there. If you issue a maven install into your local cache you can overwrite everything, breaking
+the uniqueness of your artifact version and therefore potentially diverge your local dependencies from the one in the
+ repo. This leads to interesting "works on my machine" situations that you want to avoid!</p>
+</blockquote>
+<h3 id="maven-lifecycle">Maven lifecycle</h3>
+<p>In the previous section we briefly mentioned <code>maven install</code>. This section will explain the details behind this.</p>
+<p>Every maven build follows the so called <a href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">maven lifecycle</a>.</p>
+<p>To understand the lifecycle we first have to define some words:</p>
+<ul>
+<li>goal</li>
+<li>phase</li>
+</ul>
+<p>A <code>goal</code> is basically a command that you can issue to maven or one of the plugins used.</p>
+<p>A <code>phase</code> is one <code>goal</code> in the lifecycle; the lifecycle consists of many <code>phases</code>.</p>
+<p>The full maven lifecycle looks like this:</p>
+<ul>
+<li><code>validate</code> - validate the project is correct and all necessary information is available</li>
+<li><code>compile</code> - compile the source code of the project</li>
+<li><code>test</code> - test the compiled source code using a suitable unit testing framework. These tests should not require the
+ code be packaged or deployed</li>
+<li><code>package</code> - take the compiled code and package it in its distributable format, such as a JAR.</li>
+<li><code>integration-test</code> - process and deploy the package if necessary into an environment where integration tests can be run</li>
+<li><code>verify</code> - run any checks to verify the package is valid and meets quality criteria</li>
+<li><code>install</code> - install the package into the local repository, for use as a dependency in other projects locally</li>
+<li><code>deploy</code> - done in an integration or release environment, copies the final package to the remote repository for
+sharing with other developers and projects.</li>
+</ul>
+<p>One additional command is the <code>clean</code> command which just deletes the target directory.</p>
+<p>The important part about the lifecycle is that the goals depend on each other. If you issue the <code>verify</code> command for
+example, maven will issue all commands up to <code>verify</code> automatically. Therefore you don't have to take care about the
+project being compiled before you verify it. Maven will make sure that you are always doing the intuitive thing.</p>
+<p>Also you can chain commands together. E.g. you can type <code>mvn clean verify</code> which will first delete all remaining
+files from the previous builds and then build and verify the current state of the project.</p>
+<h3 id="convention-over-configuration">Convention over configuration</h3></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+    </body>
+</html>

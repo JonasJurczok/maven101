@@ -1,0 +1,8 @@
+site_name: Maven 101
+docs_dir: tasks
+theme: united
+pages:
+- Introduction: index.md
+- Theory: theory.md
+- Tasks:
+  - Task1: task1/task1.md
