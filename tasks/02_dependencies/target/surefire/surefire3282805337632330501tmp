@@ -1,0 +1,5 @@
+#surefire
+#Thu Oct 29 16:47:20 CET 2015
+user.dir=/home/jjurczok/zalando/mentoring/talks/maven-101/tasks/02_dependencies
+localRepository=/home/jjurczok/.m2/repository
+basedir=/home/jjurczok/zalando/mentoring/talks/maven-101/tasks/02_dependencies

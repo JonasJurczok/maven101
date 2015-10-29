@@ -10,4 +10,4 @@ pages:
 - Theory: theory.md
 - Tasks:
   - Basic Project Setup: 01_basic_setup/basic_setup.md
-  - Adding dependencies: 02_dependencies/dependencies.md
+  - Adding Dependencies: 02_dependencies/dependencies.md

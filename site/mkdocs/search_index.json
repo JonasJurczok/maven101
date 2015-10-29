@@ -53,7 +53,7 @@
         {
             "location": "/02_dependencies/dependencies/index.html",
             "text": "Adding Dependencies\n\n\nOne of the core features of Maven is to do dependency management for you. In former times you would\nhave to download all your dependencies yourself, copy them into your project and then modify the classpath\nto actually be able to use them. Maven will take care of all of this for you.\n\n\nIn the folder \n02_dependencies\n you will find a pom file that just describes a basic project.\nTo make it compile you will need to add a dependency to the \nguava library\n.\n\n\nFinding dependency definitions\n\n\nTo add a dependency to your project you need to know the three values for \ngroupId\n, \nartifactId\n and \nversion\n that\nyou want to use. Usually there are two main ways to find out about these values:\n\n\nThe project website.\n\n\nIn the case of guava for example the readme actually states these information.\n\n\nThe maven central index.\n\n\nYou can always navigate to \nmaven central\n and then search for the artifact you are looking\nfor. In our case this would be \ngoogle guava\n. After selecting a version that suits your needs the website will\nshow you the dependency information to add to your project.",
-            "title": "Adding dependencies"
+            "title": "Adding Dependencies"
         },
         {
             "location": "/02_dependencies/dependencies/index.html#adding-dependencies",
