@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        
+        <meta name="author" content="Jonas Jurczok (jonas.jurczok@zalando.de)">
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
@@ -41,7 +41,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="..">Maven 101</a>
+            <a class="navbar-brand" href="../index.html">Maven 101</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -51,13 +51,13 @@
             
             
                 <li >
-                    <a href="..">Introduction</a>
+                    <a href="../index.html">Introduction</a>
                 </li>
             
             
             
                 <li class="active">
-                    <a href="./">Theory</a>
+                    <a href="index.html">Theory</a>
                 </li>
             
             
@@ -67,7 +67,11 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../task1/task1/">Task1</a>
+                            <a href="../01_basic_setup/basic_setup/index.html">Basic Project Setup</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../02_dependencies/dependencies/index.html">Adding dependencies</a>
                         </li>
                     
                     </ul>
@@ -79,13 +83,20 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="..">
+                    <a rel="next" href="../index.html">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../task1/task1/">
+                    <a rel="prev" href="../01_basic_setup/basic_setup/index.html">
                         Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://stash.zalando.net/projects/MENT/repos/maven101/browse">
+                        
+                        Stash
                     </a>
                 </li>
                 
@@ -208,7 +219,8 @@ example, maven will issue all commands up to <code>verify</code> automatically. 
 project being compiled before you verify it. Maven will make sure that you are always doing the intuitive thing.</p>
 <p>Also you can chain commands together. E.g. you can type <code>mvn clean verify</code> which will first delete all remaining
 files from the previous builds and then build and verify the current state of the project.</p>
-<h3 id="convention-over-configuration">Convention over configuration</h3></div>
+<h3 id="convention-over-configuration">Convention over configuration</h3>
+<p>TODO: should be moved to a task.</p></div>
         </div>
 
         <footer class="col-md-12">

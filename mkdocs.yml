@@ -1,8 +1,13 @@
 site_name: Maven 101
+site_author: Jonas Jurczok (jonas.jurczok@zalando.de)
+repo_url: https://stash.zalando.net/projects/MENT/repos/maven101/browse
+repo_name: Stash
 docs_dir: tasks
 theme: united
+use_directory_urls: false
 pages:
 - Introduction: index.md
 - Theory: theory.md
 - Tasks:
-  - Task1: task1/task1.md
+  - Basic Project Setup: 01_basic_setup/basic_setup.md
+  - Adding dependencies: 02_dependencies/dependencies.md

@@ -132,3 +132,4 @@ Also you can chain commands together. E.g. you can type `mvn clean verify` which
 files from the previous builds and then build and verify the current state of the project.
 
 ### Convention over configuration
+TODO: should be moved to a task.

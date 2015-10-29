@@ -3,16 +3,16 @@
 
     
     <url>
-     <loc>None/</loc>
-     <lastmod>2015-10-22</lastmod>
+     <loc>None/index.html</loc>
+     <lastmod>2015-10-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/theory/</loc>
-     <lastmod>2015-10-22</lastmod>
+     <loc>None/theory/index.html</loc>
+     <lastmod>2015-10-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,8 +20,14 @@
     
         
     <url>
-     <loc>None/task1/task1/</loc>
-     <lastmod>2015-10-22</lastmod>
+     <loc>None/01_basic_setup/basic_setup/index.html</loc>
+     <lastmod>2015-10-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/02_dependencies/dependencies/index.html</loc>
+     <lastmod>2015-10-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
