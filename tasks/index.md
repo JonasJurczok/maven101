@@ -4,7 +4,8 @@ Welcome to the Maven 101 training course. This course will teach you the basics 
 
 ## Goal
 
-The goals of this course are as follows:
+The goal of this course is to give you an overview over the most important topics when using maven.
+These topics are:
 
 * Basic project setup
 * Overriding properties

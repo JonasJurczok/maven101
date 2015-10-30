@@ -78,8 +78,8 @@ achieve this maven stores all artifacts in repositories. A repository is basical
 HTTP. All artifacts are identified by the triplet described before. The groupId describes the folder, the artifactId
 the filename and the version the version suffix of the desired artifact.
 
-The interesting part about this is that the maven server makes sure that versions are unique. If you push `de.zalando
-.mentoring:maven-101:0.0.1` to a repository this version is taken and can not be overwritten. This guarantees that
+The interesting part about this is that the maven server makes sure that versions are unique. If you push
+`de.zalando.mentoring:maven-101:0.0.1` to a repository this version is taken and can not be overwritten. This guarantees that
 everyone who references this artifact as a dependency will receive the exact same file every single time. Therefore
 maven is really reliable (unless the repository is shut down of course :) ).
 
@@ -111,7 +111,7 @@ A `phase` is one `goal` in the lifecycle; the lifecycle consists of many `phases
 
 The full maven lifecycle looks like this:
 
-* `validate` - validate the project is correct and all necessary information is available
+* `validate` - validate that the project is correct and all necessary information is available
 * `compile` - compile the source code of the project
 * `test` - test the compiled source code using a suitable unit testing framework. These tests should not require the
  code be packaged or deployed
@@ -132,4 +132,29 @@ Also you can chain commands together. E.g. you can type `mvn clean verify` which
 files from the previous builds and then build and verify the current state of the project.
 
 ### Convention over configuration
-TODO: should be moved to a task.
+
+One important aspect of maven is the principle of [Convention over Configuration](https://en.wikipedia.org/wiki/Convention_over_configuration).
+This basically boils down to "There is a default for everything". Technically this is implemented in a way similar to Java.
+Every maven configuration inherits from an invisible super parent (unless a specific parent is specified. See (TODO-> parents) for details).
+In your actual pom file your basically just overwrite and extend the default settings.
+
+But this principle is not just limited to the configuration. It also affects the folder structure.
+
+The standard folder structure of a maven project looks like this:
+```
+project-home
+  |--- src
+  |     |--- main
+  |     |     |--- java
+  |     |     |--- resources
+  |     |--- test
+  |     |     |--- java
+  |     |     |--- resources
+  |--- target
+  |--- pom.xml
+```
+
+Your `project` folder only contains the pom file and whatever files your IDE needs.
+The `src` folder contains your project (splitted into `main` for the actual application and `test` for
+all test related soruces) and the `target` folder contains everything that is produced by the build
+(including intermediate products).
