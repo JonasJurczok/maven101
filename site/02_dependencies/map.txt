@@ -1,5 +1,0 @@
-<a href\="index.html">Adding Dependencies</a>=<a href\="index.html" style\="color:green"><span class\="glyphicon glyphicon-ok" style\="margin-right:10px">Adding Dependencies</a>
-<a href\="02_dependencies/dependencies/index.html">Adding Dependencies</a>=<a href\="02_dependencies/dependencies/index.html" style\="color:green"><span class\="glyphicon glyphicon-ok" style\="margin-right:10px">Adding Dependencies</a>
-<a href\="../02_dependencies/dependencies/index.html">Adding Dependencies</a>=<a href\="../02_dependencies/dependencies/index.html" style\="color:green"><span class\="glyphicon glyphicon-ok" style\="margin-right:10px">Adding Dependencies</a>
-<a href\="../../02_dependencies/dependencies/index.html">Adding Dependencies</a>=<a href\="../../02_dependencies/dependencies/index.html" style\="color:green"><span class\="glyphicon glyphicon-ok" style\="margin-right:10px">Adding Dependencies</a>
-<h1 id\="adding-dependencies">Adding Dependencies</h1>=<h1 id\="adding-dependencies" style\="color:green"><span class\="glyphicon glyphicon-ok" style\="margin-right:10px"></span>Adding Dependencies</h1>

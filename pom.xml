@@ -17,34 +17,15 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 
+			<properties>
+				<task.title>Basic Project Setup</task.title>
+				<task.path>01_basic_setup/basic_setup/index.html</task.path>
+				<task.id>basic-project-setup</task.id>
+			</properties>
+
 			<modules>
 				<module>tasks/01_basic_setup</module>
 			</modules>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>com.google.code.maven-replacer-plugin</groupId>
-						<artifactId>replacer</artifactId>
-						<version>1.5.3</version>
-						<executions>
-							<execution>
-								<phase>verify</phase>
-								<goals>
-									<goal>replace</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<basedir>${basedir}/site</basedir>
-							<includes>
-								<include>**/*.html</include>
-							</includes>
-							<regex>true</regex>
-							<tokenValueMap>${basedir}/tasks/01_basic_setup/map.txt</tokenValueMap>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
 		</profile>
 
 		<profile>
@@ -53,34 +34,61 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 
+			<properties>
+				<task.title>Adding Dependencies</task.title>
+				<task.path>02_dependencies/dependencies/index.html</task.path>
+				<task.id>adding-dependencies</task.id>
+			</properties>
+
 			<modules>
 				<module>tasks/02_dependencies</module>
 			</modules>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>com.google.code.maven-replacer-plugin</groupId>
-						<artifactId>replacer</artifactId>
-						<version>1.5.3</version>
-						<executions>
-							<execution>
-								<phase>verify</phase>
-								<goals>
-									<goal>replace</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<basedir>${basedir}/site</basedir>
-							<includes>
-								<include>**/*.html</include>
-							</includes>
-							<regex>true</regex>
-							<tokenValueMap>${basedir}/tasks/02_dependencies/map.txt</tokenValueMap>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
 		</profile>
 	</profiles>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.google.code.maven-replacer-plugin</groupId>
+				<artifactId>replacer</artifactId>
+				<version>1.5.3</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>replace</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<basedir>${basedir}/site</basedir>
+					<includes>
+						<include>**/*.html</include>
+					</includes>
+					<replacements>
+						<replacement>
+							<token>&lt;a href="index.html"&gt;${task.title}&lt;/a&gt;</token>
+							<value>&lt;a href="index.html" style="color:green"&gt;&lt;span class="glyphicon glyphicon-ok" style="margin-right:10px"&gt;${task.title}&lt;/a&gt;</value>
+						</replacement>
+						<replacement>
+							<token>&lt;a href="${task.path}"&gt;${task.title}&lt;/a&gt;</token>
+							<value>&lt;a href="${task.path}" style="color:green"&gt;&lt;span class="glyphicon glyphicon-ok" style="margin-right:10px"&gt;${task.title}&lt;/a&gt;</value>
+						</replacement>
+						<replacement>
+							<token>&lt;a href="../${task.path}"&gt;${task.title}&lt;/a&gt;</token>
+							<value>&lt;a href="../${task.path}" style="color:green"&gt;&lt;span class="glyphicon glyphicon-ok" style="margin-right:10px"&gt;${task.title}&lt;/a&gt;</value>
+						</replacement>
+						<replacement>
+							<token>&lt;a href="../../${task.path}"&gt;${task.title}&lt;/a&gt;</token>
+							<value>&lt;a href="../../${task.path}" style="color:green"&gt;&lt;span class="glyphicon glyphicon-ok" style="margin-right:10px"&gt;${task.title}&lt;/a&gt;</value>
+						</replacement>
+						<replacement>
+							<token>&lt;h1 id="${task.id}"&gt;${task.title}&lt;/h1&gt;</token>
+							<value>&lt;h1 id="${task.id}" style="color:green"&gt;&lt;span class="glyphicon glyphicon-ok" style="margin-right:10px"&gt;&lt;/span&gt;${task.title}&lt;/h1&gt;</value>
+						</replacement>
+					</replacements>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
