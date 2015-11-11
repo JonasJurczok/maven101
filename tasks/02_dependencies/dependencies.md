@@ -7,6 +7,8 @@ to actually be able to use them. Maven will take care of all of this for you.
 In the folder `02_dependencies` you will find a pom file that just describes a basic project.
 To make it compile you will need to add a dependency to the [guava library](https://github.com/google/guava).
 
+If you are ready execute `mvn clean verify -Ptask2` in the root of the project and reload this page.
+
 ## Finding dependency definitions
 
 To add a dependency to your project you need to know the three values for `groupId`, `artifactId` and `version` that

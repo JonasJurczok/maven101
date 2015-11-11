@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Adding Dependencies - Maven 101</title>
+	<title>Properties and Defaults - Maven 101</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -70,12 +70,12 @@
                             <a href="../../01_basic_setup/basic_setup/index.html">Basic Project Setup</a>
                         </li>
                     
-                        <li class="active">
-                            <a href="index.html">Adding Dependencies</a>
+                        <li >
+                            <a href="../../02_dependencies/dependencies/index.html">Adding Dependencies</a>
                         </li>
                     
-                        <li >
-                            <a href="../../03_properties/properties/index.html">Properties and Defaults</a>
+                        <li class="active">
+                            <a href="index.html">Properties and Defaults</a>
                         </li>
                     
                     </ul>
@@ -87,12 +87,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="../../01_basic_setup/basic_setup/index.html">
+                    <a rel="next" href="../../02_dependencies/dependencies/index.html">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li >
-                    <a rel="prev" href="../../03_properties/properties/index.html">
+                <li class="disabled">
+                    <a rel="prev" >
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -113,31 +113,23 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#adding-dependencies">Adding Dependencies</a></li>
-        
-            <li><a href="#finding-dependency-definitions">Finding dependency definitions</a></li>
+        <li class="main active"><a href="#properties-and-defaults">Properties and Defaults</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="adding-dependencies">Adding Dependencies</h1>
-<p>One of the core features of Maven is to do dependency management for you. In former times you would
-have to download all your dependencies yourself, copy them into your project and then modify the classpath
-to actually be able to use them. Maven will take care of all of this for you.</p>
-<p>In the folder <code>02_dependencies</code> you will find a pom file that just describes a basic project.
-To make it compile you will need to add a dependency to the <a href="https://github.com/google/guava">guava library</a>.</p>
-<p>If you are ready execute <code>mvn clean verify -Ptask2</code> in the root of the project and reload this page.</p>
-<h2 id="finding-dependency-definitions">Finding dependency definitions</h2>
-<p>To add a dependency to your project you need to know the three values for <code>groupId</code>, <code>artifactId</code> and <code>version</code> that
-you want to use. Usually there are two main ways to find out about these values:</p>
-<h3 id="the-project-website">The project website.</h3>
-<p>In the case of guava for example the readme actually states these information.</p>
-<h3 id="the-maven-central-index">The maven central index.</h3>
-<p>You can always navigate to <a href="http://search.maven.org/">maven central</a> and then search for the artifact you are looking
-for. In our case this would be <code>google guava</code>. After selecting a version that suits your needs the website will
-show you the dependency information to add to your project.</p></div>
+<h1 id="properties-and-defaults">Properties and Defaults</h1>
+<p>As described <a href="../../theory/index.html#convention-over-configuration">earlier</a> Maven has defaults for everything.</p>
+<p>If you try to build this project by executing <code>mvn clean verify -Ptask3</code> you will notice that these defaults are
+sometimes not the best.</p>
+<p>Luckily that is easy to fix. As explained in the theoretical background you can overwrite the properties from
+the parent and the defaults by specifying them again. The way to do it is described
+<a href="https://maven.apache.org/pom.html#Properties">here</a>.</p>
+<p>The properties in question are <code>maven.compiler.source</code> and <code>maven.compiler.target</code> which tell the maven
+system which Java version to assume for the source code and the output jar.</p>
+<p>The task now is again to make the project build.</p></div>
         </div>
 
         <footer class="col-md-12">

@@ -16,3 +16,4 @@ pages:
 - Tasks:
   - Basic Project Setup: 01_basic_setup/basic_setup.md
   - Adding Dependencies: 02_dependencies/dependencies.md
+  - Properties and Defaults: 03_properties/properties.md

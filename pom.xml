@@ -44,6 +44,23 @@
 				<module>tasks/02_dependencies</module>
 			</modules>
 		</profile>
+
+		<profile>
+			<id>task3</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<properties>
+				<task.title>Adding Dependencies</task.title>
+				<task.path>02_dependencies/dependencies/index.html</task.path>
+				<task.id>adding-dependencies</task.id>
+			</properties>
+
+			<modules>
+				<module>tasks/03_properties</module>
+			</modules>
+		</profile>
 	</profiles>
 
 	<build>
