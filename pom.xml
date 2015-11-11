@@ -18,9 +18,9 @@
 			</activation>
 
 			<properties>
+				<task.id>basic-project-setup</task.id>
 				<task.title>Basic Project Setup</task.title>
 				<task.path>01_basic_setup/basic_setup/index.html</task.path>
-				<task.id>basic-project-setup</task.id>
 			</properties>
 
 			<modules>
@@ -35,9 +35,9 @@
 			</activation>
 
 			<properties>
+				<task.id>adding-dependencies</task.id>
 				<task.title>Adding Dependencies</task.title>
 				<task.path>02_dependencies/dependencies/index.html</task.path>
-				<task.id>adding-dependencies</task.id>
 			</properties>
 
 			<modules>
@@ -52,9 +52,9 @@
 			</activation>
 
 			<properties>
-				<task.title>Adding Dependencies</task.title>
-				<task.path>02_dependencies/dependencies/index.html</task.path>
-				<task.id>adding-dependencies</task.id>
+				<task.id>properties-and-defaults</task.id>
+				<task.title>Properties and Defaults</task.title>
+				<task.path>03_properties/properties/index.html</task.path>
 			</properties>
 
 			<modules>
