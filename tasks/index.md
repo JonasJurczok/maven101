@@ -12,6 +12,13 @@ These topics are:
 * Adding dependencies
 * Modifying the build
 
+## Prerequisites
+
+To successfully complete this session you need to have the following software installed and up and running:
+
+* [Maven](https://maven.apache.org/install.html)
+* [Java8](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html)
+
 ## Instructions
 
 To complete this session please read the [theoretical introduction](theory.md) first.
@@ -25,3 +32,4 @@ If everything goes well the corresponding task page (as well as the maven build)
 
 Also you will find a couple of `*.md` files in the task directories. They are used to generate this website so just
 ignore them.
+

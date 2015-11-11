@@ -61,6 +61,24 @@
 				<module>tasks/03_properties</module>
 			</modules>
 		</profile>
+
+		<profile>
+			<id>task4</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<properties>
+				<task.id>properties-and-defaults</task.id>
+				<task.title>Properties and Defaults</task.title>
+				<task.path>03_properties/properties/index.html</task.path>
+			</properties>
+
+			<modules>
+				<module>tasks/04_tests</module>
+			</modules>
+		</profile>
+
 	</profiles>
 
 	<build>

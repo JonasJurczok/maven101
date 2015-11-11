@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Properties and Defaults - Maven 101</title>
+	<title>Tests - Maven 101</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -74,12 +74,12 @@
                             <a href="../../02_dependencies/dependencies/index.html">Adding Dependencies</a>
                         </li>
                     
-                        <li class="active">
-                            <a href="index.html">Properties and Defaults</a>
+                        <li >
+                            <a href="../../03_properties/properties/index.html">Properties and Defaults</a>
                         </li>
                     
-                        <li >
-                            <a href="../../04_tests/tests/index.html">Tests</a>
+                        <li class="active">
+                            <a href="index.html">Tests</a>
                         </li>
                     
                     </ul>
@@ -91,12 +91,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="../../02_dependencies/dependencies/index.html">
+                    <a rel="next" href="../../03_properties/properties/index.html">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li >
-                    <a rel="prev" href="../../04_tests/tests/index.html">
+                <li class="disabled">
+                    <a rel="prev" >
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -117,23 +117,16 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#properties-and-defaults">Properties and Defaults</a></li>
+        <li class="main active"><a href="#tests">Tests</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="properties-and-defaults">Properties and Defaults</h1>
-<p>As described <a href="../../theory/index.html#convention-over-configuration">earlier</a> Maven has defaults for everything.</p>
-<p>If you try to build this project by executing <code>mvn clean verify -Ptask3</code> you will notice that these defaults are
-sometimes not the best.</p>
-<p>Luckily that is easy to fix. As explained in the theoretical background you can overwrite the properties from
-the parent and the defaults by specifying them again. The way to do it is described
-<a href="https://maven.apache.org/pom.html#Properties">here</a>.</p>
-<p>The properties in question are <code>maven.compiler.source</code> and <code>maven.compiler.target</code> which tell the maven
-system which Java version to assume for the source code and the output jar.</p>
-<p>The task now is again to make the project build.</p></div>
+<h1 id="tests">Tests</h1>
+<p>One of the main tasks of a build system is to ensure that all your testa are passing. If we go back to the
+<a href="../../theory/index.html#Maven lifecycle">Maven lifecycle</a> you can see two phases covering tests.</p></div>
         </div>
 
         <footer class="col-md-12">

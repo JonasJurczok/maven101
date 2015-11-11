@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/index.html",
-            "text": "Welcome to Maven 101\n\n\nWelcome to the Maven 101 training course. This course will teach you the basics of maven and how we use it.\n\n\nGoal\n\n\nThe goal of this course is to give you an overview over the most important topics when using maven.\nThese topics are:\n\n\n\n\nBasic project setup\n\n\nOverriding properties\n\n\nAdding dependencies\n\n\nModifying the build\n\n\n\n\nInstructions\n\n\nTo complete this session please read the \ntheoretical introduction\n first.\nAfter doing so you can find the description of the individual tasks in the tasks menu at the top.\n\n\nEvery single task will deal with one specific aspect of maven.\nIn the repository you checked out there is a folder named \ntasks\n that contains folders for the individual tasks\nthemselves.\nIf you think the task is completed just run a maven clean verify -PtaskX in the root of the project.\nIf everything goes well the corresponding task page (as well as the maven build) will give you feedback.\n\n\nAlso you will find a couple of \n*.md\n files in the task directories. They are used to generate this website so just\nignore them.",
+            "text": "Welcome to Maven 101\n\n\nWelcome to the Maven 101 training course. This course will teach you the basics of maven and how we use it.\n\n\nGoal\n\n\nThe goal of this course is to give you an overview over the most important topics when using maven.\nThese topics are:\n\n\n\n\nBasic project setup\n\n\nOverriding properties\n\n\nAdding dependencies\n\n\nModifying the build\n\n\n\n\nPrerequisites\n\n\nTo successfully complete this session you need to have the following software installed and up and running:\n\n\n\n\nMaven\n\n\nJava8\n\n\n\n\nInstructions\n\n\nTo complete this session please read the \ntheoretical introduction\n first.\nAfter doing so you can find the description of the individual tasks in the tasks menu at the top.\n\n\nEvery single task will deal with one specific aspect of maven.\nIn the repository you checked out there is a folder named \ntasks\n that contains folders for the individual tasks\nthemselves.\nIf you think the task is completed just run a maven clean verify -PtaskX in the root of the project.\nIf everything goes well the corresponding task page (as well as the maven build) will give you feedback.\n\n\nAlso you will find a couple of \n*.md\n files in the task directories. They are used to generate this website so just\nignore them.",
             "title": "Introduction"
         },
         {
@@ -14,6 +14,11 @@
             "location": "/index.html#goal",
             "text": "The goal of this course is to give you an overview over the most important topics when using maven.\nThese topics are:   Basic project setup  Overriding properties  Adding dependencies  Modifying the build",
             "title": "Goal"
+        },
+        {
+            "location": "/index.html#prerequisites",
+            "text": "To successfully complete this session you need to have the following software installed and up and running:   Maven  Java8",
+            "title": "Prerequisites"
         },
         {
             "location": "/index.html#instructions",
@@ -74,6 +79,16 @@
             "location": "/03_properties/properties/index.html#properties-and-defaults",
             "text": "As described  earlier  Maven has defaults for everything.  If you try to build this project by executing  mvn clean verify -Ptask3  you will notice that these defaults are\nsometimes not the best.  Luckily that is easy to fix. As explained in the theoretical background you can overwrite the properties from\nthe parent and the defaults by specifying them again. The way to do it is described here .  The properties in question are  maven.compiler.source  and  maven.compiler.target  which tell the maven\nsystem which Java version to assume for the source code and the output jar.  The task now is again to make the project build.",
             "title": "Properties and Defaults"
+        },
+        {
+            "location": "/04_tests/tests/index.html",
+            "text": "Tests\n\n\nOne of the main tasks of a build system is to ensure that all your testa are passing. If we go back to the\n\nMaven lifecycle\n you can see two phases covering tests.",
+            "title": "Tests"
+        },
+        {
+            "location": "/04_tests/tests/index.html#tests",
+            "text": "One of the main tasks of a build system is to ensure that all your testa are passing. If we go back to the Maven lifecycle  you can see two phases covering tests.",
+            "title": "Tests"
         }
     ]
 }
