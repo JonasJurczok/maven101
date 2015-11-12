@@ -126,7 +126,20 @@
 
 <h1 id="tests">Tests</h1>
 <p>One of the main tasks of a build system is to ensure that all your testa are passing. If we go back to the
-<a href="../../theory/index.html#Maven lifecycle">Maven lifecycle</a> you can see two phases covering tests.</p></div>
+<a href="../../theory/index.html#maven-lifecycle">Maven lifecycle</a> you can see two phases covering tests:</p>
+<ul>
+<li>test</li>
+<li>integration-test</li>
+</ul>
+<p>By default the test phase will run your JUnit unit tests (if there is a JUnit dependency in your project).
+The <code>integration-test</code> phase is used by plugins like the <code>failsafe-plugin</code> to run more complex tests that
+usually involve deploying the artifact to an application server or starting up a database.</p>
+<p>The interesting aspect of this is that your build will fail if your tests fail, thus preventing you from
+receiving an artifact in the end. This way you cannot (even by accident or thorugh an automated pipeline) deploy
+something that has failing tests. <strong>This of course only works if your tests cover all your use cases ;)</strong></p>
+<p>Again, the task is to make the project build work using <code>mvn clean verify -Ptask4</code>.
+Also verify that you see why it is failing in the first place and also check the target folder
+to see what it looks like when the build stops at some point.</p></div>
         </div>
 
         <footer class="col-md-12">

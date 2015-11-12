@@ -69,9 +69,9 @@
 			</activation>
 
 			<properties>
-				<task.id>properties-and-defaults</task.id>
-				<task.title>Properties and Defaults</task.title>
-				<task.path>03_properties/properties/index.html</task.path>
+				<task.id>tests</task.id>
+				<task.title>Tests</task.title>
+				<task.path>04_tests/tests/index.html</task.path>
 			</properties>
 
 			<modules>
