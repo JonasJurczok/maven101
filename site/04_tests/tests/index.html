@@ -119,6 +119,8 @@
     
         <li class="main active"><a href="#tests">Tests</a></li>
         
+            <li><a href="#further-reading">Further reading</a></li>
+        
     
     </ul>
 </div></div>
@@ -139,7 +141,12 @@ receiving an artifact in the end. This way you cannot (even by accident or thoru
 something that has failing tests. <strong>This of course only works if your tests cover all your use cases ;)</strong></p>
 <p>Again, the task is to make the project build work using <code>mvn clean verify -Ptask4</code>.
 Also verify that you see why it is failing in the first place and also check the target folder
-to see what it looks like when the build stops at some point.</p></div>
+to see what it looks like when the build stops at some point.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>If you want to enhance your knowledge on this topic we highly recommend to start reading about the
+<a href="https://maven.apache.org/surefire/maven-surefire-plugin/">Maven surefire plugin</a> and the
+<a href="https://maven.apache.org/surefire/maven-failsafe-plugin/">Maven failsafe plugin</a> as they are the basis for
+all extended testing.</p></div>
         </div>
 
         <footer class="col-md-12">

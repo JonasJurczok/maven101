@@ -17,3 +17,10 @@ something that has failing tests. **This of course only works if your tests cove
 Again, the task is to make the project build work using `mvn clean verify -Ptask4`.
 Also verify that you see why it is failing in the first place and also check the target folder
 to see what it looks like when the build stops at some point.
+
+## Further reading
+
+If you want to enhance your knowledge on this topic we highly recommend to start reading about the
+[Maven surefire plugin](https://maven.apache.org/surefire/maven-surefire-plugin/) and the
+[Maven failsafe plugin](https://maven.apache.org/surefire/maven-failsafe-plugin/) as they are the basis for
+all extended testing.
