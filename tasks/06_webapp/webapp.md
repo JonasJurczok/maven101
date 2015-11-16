@@ -33,5 +33,5 @@ project-home
 To test the application you would now have to build and run it. In former times you would have produced the
 packaged app, copy it to your application server and then start it. Thanks to maven this is no longer necessary.
 As described in the plugins section please add the [Tomcat Maven plugin](http://tomcat.apache.org/maven-plugin-2.2/)
-to the project and run the app with `mvn clean tomcat:run-war`. Then navigate to `localhost:8080XXXX` and check
-if the app is showing correctly.
+to the project and run the app with `mvn clean tomcat:run-war`. Then navigate to `http://localhost:8080/maven101-task6/`
+and check if the app is showing correctly. If it does run `mvn clean verify -Ptask6` to mark the task as completed.

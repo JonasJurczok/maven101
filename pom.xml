@@ -95,6 +95,23 @@
 				<module>tasks/05_plugins</module>
 			</modules>
 		</profile>
+
+		<profile>
+			<id>task6</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<properties>
+				<task.id>webapps</task.id>
+				<task.title>Webapps</task.title>
+				<task.path>06_webapp/webapp/index.html</task.path>
+			</properties>
+
+			<modules>
+				<module>tasks/06_webapp</module>
+			</modules>
+		</profile>
 	</profiles>
 
 	<build>
