@@ -79,6 +79,22 @@
 			</modules>
 		</profile>
 
+		<profile>
+			<id>task5</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<properties>
+				<task.id>plugins</task.id>
+				<task.title>Plugins</task.title>
+				<task.path>05_plugins/plugins/index.html</task.path>
+			</properties>
+
+			<modules>
+				<module>tasks/05_plugins</module>
+			</modules>
+		</profile>
 	</profiles>
 
 	<build>

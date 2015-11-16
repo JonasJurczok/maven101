@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Basic Project Setup - Maven 101</title>
+	<title>Plugins - Maven 101</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -66,8 +66,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tasks <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li class="active">
-                            <a href="index.html">Basic Project Setup</a>
+                        <li >
+                            <a href="../../01_basic_setup/basic_setup/index.html">Basic Project Setup</a>
                         </li>
                     
                         <li >
@@ -82,8 +82,8 @@
                             <a href="../../04_tests/tests/index.html">Tests</a>
                         </li>
                     
-                        <li >
-                            <a href="../../05_plugins/plugins/index.html">Plugins</a>
+                        <li class="active">
+                            <a href="index.html">Plugins</a>
                         </li>
                     
                     </ul>
@@ -95,12 +95,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="../../theory/index.html">
+                    <a rel="next" href="../../04_tests/tests/index.html">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li >
-                    <a rel="prev" href="../../02_dependencies/dependencies/index.html">
+                <li class="disabled">
+                    <a rel="prev" >
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -121,19 +121,77 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#basic-project-setup">Basic project setup</a></li>
+        <li class="main active"><a href="#plugins">Plugins</a></li>
+        
+            <li><a href="#modify-the-build">Modify the build</a></li>
+        
+            <li><a href="#plugin-categories">Plugin categories</a></li>
+        
+            <li><a href="#task">Task</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="basic-project-setup">Basic project setup</h1>
-<p>The first task is to start from almost nothing and make the project buildable.</p>
-<p>Please take a look in the folder <code>tasks/01_basic_setup</code>. You will find a <code>pom.xml</code> which is exactly what you will find on the
-internet if you search for an example of a pom file.</p>
-<p>The task now is to make the project buildable.</p>
-<p>If you are ready execute <code>mvn clean verify -Ptask1</code> in the root of the project and reload this page.</p></div>
+<h1 id="plugins">Plugins</h1>
+<p>So far we have seen how to overwrite properties, add dependencies and how the integration with tests works.
+One other large aspect of maven is the versatility of the ecosystem. For the most basic java projects the knowledge
+you accumulated so far might be sufficient. But most of our projects are not basic... To build them we have to</p>
+<h2 id="modify-the-build">Modify the build</h2>
+<p>To change or extend the way maven is building your project you can add plugins to the build. Plugins are also
+identified like artifacts (groupId, artifactId, version) but instead of just adding code to your classpath
+maven will execute them according to their configuration.</p>
+<h2 id="plugin-categories">Plugin categories</h2>
+<p>Configuration wise plugins split into two groups.</p>
+<h3 id="adding-capabilities">Adding capabilities</h3>
+<p>Adding capabilities is dead easy, just add the plugin to the build tag. The prime example here is the
+<a href="http://tomcat.apache.org/maven-plugin.html">Tomcat Maven plugin</a>. It is used to add a tomcat webserver to your
+project that you can fire up and deploy your application to with just one command.</p>
+<p>If you just add this plugin to your build like this</p>
+<pre><code>&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
+      &lt;artifactId&gt;tomcat6-maven-plugin&lt;/artifactId&gt;
+      &lt;version&gt;2.3-SNAPSHOT&lt;/version&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+
+<p>It will do nothing on its own but give you access to the plugin specific goals like <code>mvn tomcat:run-war</code>.</p>
+<h3 id="changing-the-behaviour-of-the-build">Changing the behaviour of the build</h3>
+<p>The second category of plugins are the ones that actually modify the way the build behaves. The prime example
+for this category is the <a href="https://maven.apache.org/surefire/maven-failsafe-plugin/">Maven failsafe plugin</a> which
+is used to run your integration test. The configuration for using this plugin looks like this:</p>
+<pre><code>&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-failsafe-plugin&lt;/artifactId&gt;
+      &lt;version&gt;2.19&lt;/version&gt;
+      &lt;executions&gt;
+        &lt;execution&gt;
+          &lt;phase&gt;integration-test&gt;
+          &lt;goals&gt;
+            &lt;goal&gt;verify&lt;/goal&gt;
+          &lt;/goals&gt;
+        &lt;/execution&gt;
+      &lt;/executions&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+
+<p>This configuration binds to the <code>integration-test</code> phase and tells maven to call the <code>verify</code> goal of the plugin.
+With this mechanism you can now change all kinds of things, be it running SQL scripts against databases, compile C code,
+generate documentation websites etc.</p>
+<h2 id="task">Task</h2>
+<p>To complete this task you will have to make the same change as in the <a href="../../03_properties/properties/index.html">properties</a> task;
+change the java version to java 8. But this time it should be done by adding the
+<a href="https://maven.apache.org/plugins/maven-compiler-plugin/">Maven Compiler plugin</a>. If you are ready just run
+<code>mvn clean verify -Ptask5</code> as always.</p></div>
         </div>
 
         <footer class="col-md-12">

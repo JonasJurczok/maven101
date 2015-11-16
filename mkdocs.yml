@@ -18,3 +18,4 @@ pages:
   - Adding Dependencies: 02_dependencies/dependencies.md
   - Properties and Defaults: 03_properties/properties.md
   - Tests: 04_tests/tests.md
+  - Plugins: 05_plugins/plugins.md
