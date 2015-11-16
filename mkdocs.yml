@@ -19,3 +19,4 @@ pages:
   - Properties and Defaults: 03_properties/properties.md
   - Tests: 04_tests/tests.md
   - Plugins: 05_plugins/plugins.md
+  - Webapp: 06_webapp/webapp.md
