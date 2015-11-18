@@ -142,6 +142,7 @@
 <p>Welcome to the Maven 101 training course. This course will teach you the basics of maven and how we use it.</p>
 <h2 id="goal">Goal</h2>
 <p>The goal of this course is to give you an overview over the most important topics when using maven.
+Every task will deal with one specific aspect of maven.
 These topics are:</p>
 <ul>
 <li>Basic project setup</li>
@@ -156,13 +157,14 @@ These topics are:</p>
 <li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html">Java8</a></li>
 </ul>
 <h2 id="instructions">Instructions</h2>
-<p>To complete this session please read the <a href="theory/index.html">theoretical introduction</a> first.
-After doing so you can find the description of the individual tasks in the tasks menu at the top.</p>
-<p>Every single task will deal with one specific aspect of maven.
-In the repository you checked out there is a folder named <code>tasks</code> that contains folders for the individual tasks
-themselves.
-If you think the task is completed just run a <code>mvn clean verify -PtaskX</code> in the <strong>root</strong> of the checked out project.
-If everything goes well the corresponding task page (as well as the maven build) will give you feedback.</p>
+<p>First read the <a href="theory/index.html">theoretical introduction</a>.</p>
+<p>For each task in the upper menu</p>
+<ol>
+<li>Take a look in the specific task folder <code>/tasks/task_XX</code></li>
+<li>Modify the content of said folder to solve the task at hand</li>
+<li>Execute <code>mvn clean verify -PtaskX</code> in the <strong>root</strong> of the checked out project</li>
+<li>Reload the task page to check if the task has been completed.</li>
+</ol>
 <p>Also you will find a couple of <code>*.md</code> files in the task directories. They are used to generate this website so just
 ignore them.</p></div>
         </div>

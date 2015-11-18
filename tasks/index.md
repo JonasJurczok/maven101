@@ -5,6 +5,7 @@ Welcome to the Maven 101 training course. This course will teach you the basics 
 ## Goal
 
 The goal of this course is to give you an overview over the most important topics when using maven.
+Every task will deal with one specific aspect of maven.
 These topics are:
 
 * Basic project setup
@@ -21,14 +22,14 @@ To successfully complete this session you need to have the following software in
 
 ## Instructions
 
-To complete this session please read the [theoretical introduction](theory.md) first.
-After doing so you can find the description of the individual tasks in the tasks menu at the top.
+First read the [theoretical introduction](theory.md).
 
-Every single task will deal with one specific aspect of maven.
-In the repository you checked out there is a folder named `tasks` that contains folders for the individual tasks
-themselves.
-If you think the task is completed just run a `mvn clean verify -PtaskX` in the **root** of the checked out project.
-If everything goes well the corresponding task page (as well as the maven build) will give you feedback.
+For each task in the upper menu
+
+1. Take a look in the specific task folder `/tasks/task_XX`
+2. Modify the content of said folder to solve the task at hand
+3. Execute `mvn clean verify -PtaskX` in the **root** of the checked out project
+4. Reload the task page to check if the task has been completed.
 
 Also you will find a couple of `*.md` files in the task directories. They are used to generate this website so just
 ignore them.

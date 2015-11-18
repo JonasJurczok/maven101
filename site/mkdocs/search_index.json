@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/index.html",
-            "text": "Welcome to Maven 101\n\n\nWelcome to the Maven 101 training course. This course will teach you the basics of maven and how we use it.\n\n\nGoal\n\n\nThe goal of this course is to give you an overview over the most important topics when using maven.\nThese topics are:\n\n\n\n\nBasic project setup\n\n\nOverriding properties\n\n\nAdding dependencies\n\n\nModifying the build\n\n\n\n\nPrerequisites\n\n\nTo successfully complete this session you need to have the following software installed and up and running:\n\n\n\n\nMaven\n\n\nJava8\n\n\n\n\nInstructions\n\n\nTo complete this session please read the \ntheoretical introduction\n first.\nAfter doing so you can find the description of the individual tasks in the tasks menu at the top.\n\n\nEvery single task will deal with one specific aspect of maven.\nIn the repository you checked out there is a folder named \ntasks\n that contains folders for the individual tasks\nthemselves.\nIf you think the task is completed just run a \nmvn clean verify -PtaskX\n in the \nroot\n of the checked out project.\nIf everything goes well the corresponding task page (as well as the maven build) will give you feedback.\n\n\nAlso you will find a couple of \n*.md\n files in the task directories. They are used to generate this website so just\nignore them.",
+            "text": "Welcome to Maven 101\n\n\nWelcome to the Maven 101 training course. This course will teach you the basics of maven and how we use it.\n\n\nGoal\n\n\nThe goal of this course is to give you an overview over the most important topics when using maven.\nEvery task will deal with one specific aspect of maven.\nThese topics are:\n\n\n\n\nBasic project setup\n\n\nOverriding properties\n\n\nAdding dependencies\n\n\nModifying the build\n\n\n\n\nPrerequisites\n\n\nTo successfully complete this session you need to have the following software installed and up and running:\n\n\n\n\nMaven\n\n\nJava8\n\n\n\n\nInstructions\n\n\nFirst read the \ntheoretical introduction\n.\n\n\nFor each task in the upper menu\n\n\n\n\nTake a look in the specific task folder \n/tasks/task_XX\n\n\nModify the content of said folder to solve the task at hand\n\n\nExecute \nmvn clean verify -PtaskX\n in the \nroot\n of the checked out project\n\n\nReload the task page to check if the task has been completed.\n\n\n\n\nAlso you will find a couple of \n*.md\n files in the task directories. They are used to generate this website so just\nignore them.",
             "title": "Introduction"
         },
         {
@@ -12,7 +12,7 @@
         },
         {
             "location": "/index.html#goal",
-            "text": "The goal of this course is to give you an overview over the most important topics when using maven.\nThese topics are:   Basic project setup  Overriding properties  Adding dependencies  Modifying the build",
+            "text": "The goal of this course is to give you an overview over the most important topics when using maven.\nEvery task will deal with one specific aspect of maven.\nThese topics are:   Basic project setup  Overriding properties  Adding dependencies  Modifying the build",
             "title": "Goal"
         },
         {
@@ -22,7 +22,7 @@
         },
         {
             "location": "/index.html#instructions",
-            "text": "To complete this session please read the  theoretical introduction  first.\nAfter doing so you can find the description of the individual tasks in the tasks menu at the top.  Every single task will deal with one specific aspect of maven.\nIn the repository you checked out there is a folder named  tasks  that contains folders for the individual tasks\nthemselves.\nIf you think the task is completed just run a  mvn clean verify -PtaskX  in the  root  of the checked out project.\nIf everything goes well the corresponding task page (as well as the maven build) will give you feedback.  Also you will find a couple of  *.md  files in the task directories. They are used to generate this website so just\nignore them.",
+            "text": "First read the  theoretical introduction .  For each task in the upper menu   Take a look in the specific task folder  /tasks/task_XX  Modify the content of said folder to solve the task at hand  Execute  mvn clean verify -PtaskX  in the  root  of the checked out project  Reload the task page to check if the task has been completed.   Also you will find a couple of  *.md  files in the task directories. They are used to generate this website so just\nignore them.",
             "title": "Instructions"
         },
         {
