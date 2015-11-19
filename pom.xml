@@ -128,11 +128,6 @@
 			<modules>
 				<module>tasks/07_profiles</module>
 			</modules>
-
-			<activation>
-				<
-			</activation>
-
 		</profile>
 	</profiles>
 

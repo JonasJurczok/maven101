@@ -144,8 +144,8 @@ REST endpoints, you will need a webserver of some kind. To transoform a maven pr
 is really easy. Just perform the following steps and then run <code>mvn clean verify -Ptask6</code>.</p>
 <h2 id="packaging">Packaging</h2>
 <p>First you have to overwrite the <code>packaging</code> attribute of your project. The default is <code>jar</code> but if you switch it
-to <code>war</code> maven will produce a webapp package instead all setup according to the standard
-(dependencies as jars in a lib folder, etc.).</p>
+to <code>war</code> maven will produce a webapp package instead. The layout of the war archive is also changed according to
+the standard (dependencies as jars in a lib folder, etc.).</p>
 <h2 id="actual-webapp">actual webapp</h2>
 <p>Of course you also need a real webapp to deploy. You will find a small hello world website in the task folder.</p>
 <p>The important part here is the folder structure (again convention over configuration). You will find the page
@@ -164,8 +164,9 @@ in the webapp folder.</p>
 <p>To test the application you would now have to build and run it. In former times you would have produced the
 packaged app, copy it to your application server and then start it. Thanks to maven this is no longer necessary.
 As described in the plugins section please add the <a href="http://tomcat.apache.org/maven-plugin-2.2/">Tomcat Maven plugin</a>
-to the project and run the app with <code>mvn clean tomcat:run-war</code>. Then navigate to <code>http://localhost:8080/maven101-task6/</code>
-and check if the app is showing correctly. If it does run <code>mvn clean verify -Ptask6</code> to mark the task as completed.</p></div>
+to the project and run the app with <code>mvn clean tomcat:run-war</code> from the task folder. Then navigate to <code>http://localhost:8080/maven101-task6/</code>
+and check if the app is showing correctly.
+If it does run <code>mvn clean verify -Ptask6</code> from the root again to mark the task as completed.</p></div>
         </div>
 
         <footer class="col-md-12">

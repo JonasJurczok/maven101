@@ -7,8 +7,8 @@ is really easy. Just perform the following steps and then run `mvn clean verify 
 ## Packaging
 
 First you have to overwrite the `packaging` attribute of your project. The default is `jar` but if you switch it
-to `war` maven will produce a webapp package instead all setup according to the standard
-(dependencies as jars in a lib folder, etc.).
+to `war` maven will produce a webapp package instead. The layout of the war archive is also changed according to
+the standard (dependencies as jars in a lib folder, etc.).
 
 ## actual webapp
 
@@ -33,5 +33,6 @@ project-home
 To test the application you would now have to build and run it. In former times you would have produced the
 packaged app, copy it to your application server and then start it. Thanks to maven this is no longer necessary.
 As described in the plugins section please add the [Tomcat Maven plugin](http://tomcat.apache.org/maven-plugin-2.2/)
-to the project and run the app with `mvn clean tomcat:run-war`. Then navigate to `http://localhost:8080/maven101-task6/`
-and check if the app is showing correctly. If it does run `mvn clean verify -Ptask6` to mark the task as completed.
+to the project and run the app with `mvn clean tomcat:run-war` from the task folder. Then navigate to `http://localhost:8080/maven101-task6/`
+and check if the app is showing correctly.
+If it does run `mvn clean verify -Ptask6` from the root again to mark the task as completed.
