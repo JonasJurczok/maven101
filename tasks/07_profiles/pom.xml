@@ -8,11 +8,10 @@
 	<artifactId>maven101-task7</artifactId>
 	<version>0.1.0</version>
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-		</dependency>
-	</dependencies>
+	<properties>
+		<task.id>profiles</task.id>
+		<task.title>Profiles</task.title>
+		<task.path>07_profiles/profiles/index.html</task.path>
+	</properties>
+
 </project>

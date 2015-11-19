@@ -144,6 +144,21 @@
             "location": "/06_webapp/webapp/index.html#test-the-app",
             "text": "To test the application you would now have to build and run it. In former times you would have produced the\npackaged app, copy it to your application server and then start it. Thanks to maven this is no longer necessary.\nAs described in the plugins section please add the  Tomcat Maven plugin \nto the project and run the app with  mvn clean tomcat:run-war  from the task folder. Then navigate to  http://localhost:8080/maven101-task6/ \nand check if the app is showing correctly.\nIf it does run  mvn clean verify -Ptask6  from the root again to mark the task as completed.",
             "title": "Test the app"
+        },
+        {
+            "location": "/07_profiles/profiles/index.html",
+            "text": "Profiles\n\n\nProfiles give you the option to hide specific configuration behind a name. The standard example for this\nis the integration-test profile. Usually you don't want to run all your integration tests on every build as they\ntend to run long. To avoid this hide all the integration test related config in a profile and only activate\nit when it is needed (during CI builds for example).\n\n\nFor more details see the official documentation on profiles\n\nhere\n.\n\n\nTask\n\n\nFor this task you will have to modify not the pom in the task folder but the\none in the root. First take a look into it and familiarize yourself with the existing\nprofiles. You will see that every profile needs three properties to run properly.\nIn \n/tasks/07_profiles/pom.xml\n you will find all the needed properties.\n\n\nTo use them you will have to modify the profile below \ntask6\n. It will need\na name so that you can activate it with a command line parameter.\nAlso it needs a reference to the tasks pom to also load the content and with\nit the properties.\n\n\nIf you did this again run \nmvn clean verify -Ptask7\n in the root of the project.\nIf everything was done right the build should be successfull and you will see\nthe green checkmark on the task.",
+            "title": "Profiles"
+        },
+        {
+            "location": "/07_profiles/profiles/index.html#profiles",
+            "text": "Profiles give you the option to hide specific configuration behind a name. The standard example for this\nis the integration-test profile. Usually you don't want to run all your integration tests on every build as they\ntend to run long. To avoid this hide all the integration test related config in a profile and only activate\nit when it is needed (during CI builds for example).  For more details see the official documentation on profiles here .",
+            "title": "Profiles"
+        },
+        {
+            "location": "/07_profiles/profiles/index.html#task",
+            "text": "For this task you will have to modify not the pom in the task folder but the\none in the root. First take a look into it and familiarize yourself with the existing\nprofiles. You will see that every profile needs three properties to run properly.\nIn  /tasks/07_profiles/pom.xml  you will find all the needed properties.  To use them you will have to modify the profile below  task6 . It will need\na name so that you can activate it with a command line parameter.\nAlso it needs a reference to the tasks pom to also load the content and with\nit the properties.  If you did this again run  mvn clean verify -Ptask7  in the root of the project.\nIf everything was done right the build should be successfull and you will see\nthe green checkmark on the task.",
+            "title": "Task"
         }
     ]
 }

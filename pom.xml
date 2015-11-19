@@ -114,20 +114,11 @@
 		</profile>
 
 		<profile>
-			<id>task7</id>
 			<activation>
 				<activeByDefault>false</activeByDefault>
 			</activation>
 
-			<properties>
-				<task.id>profiles</task.id>
-				<task.title>Profiles</task.title>
-				<task.path>07_profiles/profiles/index.html</task.path>
-			</properties>
 
-			<modules>
-				<module>tasks/07_profiles</module>
-			</modules>
 		</profile>
 	</profiles>
 

@@ -20,3 +20,4 @@ pages:
   - Tests: 04_tests/tests.md
   - Plugins: 05_plugins/plugins.md
   - Webapp: 06_webapp/webapp.md
+  - Profiles: 07_profiles/profiles.md
