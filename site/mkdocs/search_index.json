@@ -159,6 +159,21 @@
             "location": "/07_profiles/profiles/index.html#task",
             "text": "For this task you will have to modify not the pom in the task folder but the\none in the root. First take a look into it and familiarize yourself with the existing\nprofiles. You will see that every profile needs three properties to run properly.\nIn  /tasks/07_profiles/pom.xml  you will find all the needed properties.  To use them you will have to modify the profile below  task6 . It will need\na name so that you can activate it with a command line parameter.\nAlso it needs a reference to the tasks pom to also load the content and with\nit the properties.  If you did this again run  mvn clean verify -Ptask7  in the root of the project.\nIf everything was done right the build should be successfull and you will see\nthe green checkmark on the task.",
             "title": "Task"
+        },
+        {
+            "location": "/08_parents/parents/index.html",
+            "text": "Parents\n\n\nAs already described before maven has defaults for everything. This is partially achieved by having poms\ninherit from each other. This works the same way as inheritance in Java. If you do not specify a parent\nexplicitly your pom will automatically inherit from the maven internal super pom. Exactly the same way as\nyour Java objects inherit from Object.\n\n\nSpeficy a parent\n\n\nParents are also identiefied by \ngroupId\n, \nartifactId\n and \nversion\n. You can put a parent tag everywhere\n in your project tag.",
+            "title": "Parents"
+        },
+        {
+            "location": "/08_parents/parents/index.html#parents",
+            "text": "As already described before maven has defaults for everything. This is partially achieved by having poms\ninherit from each other. This works the same way as inheritance in Java. If you do not specify a parent\nexplicitly your pom will automatically inherit from the maven internal super pom. Exactly the same way as\nyour Java objects inherit from Object.",
+            "title": "Parents"
+        },
+        {
+            "location": "/08_parents/parents/index.html#speficy-a-parent",
+            "text": "Parents are also identiefied by  groupId ,  artifactId  and  version . You can put a parent tag everywhere\n in your project tag.",
+            "title": "Speficy a parent"
         }
     ]
 }

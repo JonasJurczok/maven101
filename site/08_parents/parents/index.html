@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Plugins - Maven 101</title>
+	<title>Parents - Maven 101</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -82,8 +82,8 @@
                             <a href="../../04_tests/tests/index.html">Tests</a>
                         </li>
                     
-                        <li class="active">
-                            <a href="index.html">Plugins</a>
+                        <li >
+                            <a href="../../05_plugins/plugins/index.html">Plugins</a>
                         </li>
                     
                         <li >
@@ -94,8 +94,8 @@
                             <a href="../../07_profiles/profiles/index.html">Profiles</a>
                         </li>
                     
-                        <li >
-                            <a href="../../08_parents/parents/index.html">Parents</a>
+                        <li class="active">
+                            <a href="index.html">Parents</a>
                         </li>
                     
                     </ul>
@@ -107,12 +107,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="../../04_tests/tests/index.html">
+                    <a rel="next" href="../../07_profiles/profiles/index.html">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li >
-                    <a rel="prev" href="../../06_webapp/webapp/index.html">
+                <li class="disabled">
+                    <a rel="prev" >
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -133,77 +133,23 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#plugins">Plugins</a></li>
+        <li class="main active"><a href="#parents">Parents</a></li>
         
-            <li><a href="#modify-the-build">Modify the build</a></li>
-        
-            <li><a href="#plugin-categories">Plugin categories</a></li>
-        
-            <li><a href="#task">Task</a></li>
+            <li><a href="#speficy-a-parent">Speficy a parent</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="plugins">Plugins</h1>
-<p>So far we have seen how to overwrite properties, add dependencies and how the integration with tests works.
-One other large aspect of maven is the versatility of the ecosystem. For the most basic java projects the knowledge
-you accumulated so far might be sufficient. But most of our projects are not basic... To build them we have to</p>
-<h2 id="modify-the-build">Modify the build</h2>
-<p>To change or extend the way maven is building your project you can add plugins to the build. Plugins are also
-identified like artifacts (groupId, artifactId, version) but instead of just adding code to your classpath
-maven will execute them according to their configuration.</p>
-<h2 id="plugin-categories">Plugin categories</h2>
-<p>Configuration wise plugins split into two groups.</p>
-<h3 id="adding-capabilities">Adding capabilities</h3>
-<p>Adding capabilities is dead easy, just add the plugin to the build tag. The prime example here is the
-<a href="http://tomcat.apache.org/maven-plugin.html">Tomcat Maven plugin</a>. It is used to add a tomcat webserver to your
-project that you can fire up and deploy your application to with just one command.</p>
-<p>If you just add this plugin to your build like this</p>
-<pre><code>&lt;build&gt;
-  &lt;plugins&gt;
-    &lt;plugin&gt;
-      &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
-      &lt;artifactId&gt;tomcat6-maven-plugin&lt;/artifactId&gt;
-      &lt;version&gt;2.3-SNAPSHOT&lt;/version&gt;
-    &lt;/plugin&gt;
-  &lt;/plugins&gt;
-&lt;/build&gt;
-</code></pre>
-
-<p>It will do nothing on its own but give you access to the plugin specific goals like <code>mvn tomcat:run-war</code>.</p>
-<h3 id="changing-the-behaviour-of-the-build">Changing the behaviour of the build</h3>
-<p>The second category of plugins are the ones that actually modify the way the build behaves. The prime example
-for this category is the <a href="https://maven.apache.org/surefire/maven-failsafe-plugin/">Maven failsafe plugin</a> which
-is used to run your integration test. The configuration for using this plugin looks like this:</p>
-<pre><code>&lt;build&gt;
-  &lt;plugins&gt;
-    &lt;plugin&gt;
-      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-      &lt;artifactId&gt;maven-failsafe-plugin&lt;/artifactId&gt;
-      &lt;version&gt;2.19&lt;/version&gt;
-      &lt;executions&gt;
-        &lt;execution&gt;
-          &lt;phase&gt;integration-test&gt;
-          &lt;goals&gt;
-            &lt;goal&gt;verify&lt;/goal&gt;
-          &lt;/goals&gt;
-        &lt;/execution&gt;
-      &lt;/executions&gt;
-    &lt;/plugin&gt;
-  &lt;/plugins&gt;
-&lt;/build&gt;
-</code></pre>
-
-<p>This configuration binds to the <code>integration-test</code> phase and tells maven to call the <code>verify</code> goal of the plugin.
-With this mechanism you can now change all kinds of things, be it running SQL scripts against databases, compile C code,
-generate documentation websites etc.</p>
-<h2 id="task">Task</h2>
-<p>To complete this task you will have to make the same change as in the <a href="../../03_properties/properties/index.html">properties</a> task;
-change the java version to java 8. But this time it should be done by adding the
-<a href="https://maven.apache.org/plugins/maven-compiler-plugin/">Maven Compiler plugin</a>. If you are ready just run
-<code>mvn clean verify -Ptask5</code> as always.</p></div>
+<h1 id="parents">Parents</h1>
+<p>As already described before maven has defaults for everything. This is partially achieved by having poms
+inherit from each other. This works the same way as inheritance in Java. If you do not specify a parent
+explicitly your pom will automatically inherit from the maven internal super pom. Exactly the same way as
+your Java objects inherit from Object.</p>
+<h2 id="speficy-a-parent">Speficy a parent</h2>
+<p>Parents are also identiefied by <code>groupId</code>, <code>artifactId</code> and <code>version</code>. You can put a parent tag everywhere
+ in your project tag.</p></div>
         </div>
 
         <footer class="col-md-12">

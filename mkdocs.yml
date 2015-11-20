@@ -21,3 +21,4 @@ pages:
   - Plugins: 05_plugins/plugins.md
   - Webapp: 06_webapp/webapp.md
   - Profiles: 07_profiles/profiles.md
+  - Parents: 08_parents/parents.md
