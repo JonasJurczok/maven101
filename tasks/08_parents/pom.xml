@@ -9,7 +9,7 @@
 	<version>0.1.0</version>
 
 	<properties>
-		<basedir>../..</basedir>
+		<basepath>${basedir}/../..</basepath>
 		<task.id>parents</task.id>
 		<task.title>Parents</task.title>
 		<task.path>08_parents/parents/index.html</task.path>
