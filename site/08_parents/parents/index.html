@@ -137,6 +137,8 @@
         
             <li><a href="#speficy-a-parent">Speficy a parent</a></li>
         
+            <li><a href="#the-task">The task</a></li>
+        
     
     </ul>
 </div></div>
@@ -148,8 +150,16 @@ inherit from each other. This works the same way as inheritance in Java. If you 
 explicitly your pom will automatically inherit from the maven internal super pom. Exactly the same way as
 your Java objects inherit from Object.</p>
 <h2 id="speficy-a-parent">Speficy a parent</h2>
-<p>Parents are also identiefied by <code>groupId</code>, <code>artifactId</code> and <code>version</code>. You can put a parent tag everywhere
- in your project tag.</p></div>
+<p>Parents are also identiefied by <code>groupId</code>, <code>artifactId</code> and <code>version</code>. Additionally you should provide a
+<code>relativePath</code> attribute which can be used to tell maven where to find the parent. If your parent is not
+in the same folder structure it should just be left empty. The parent can be specified anywhere in the
+<code>project</code> tag of your pom.</p>
+<h2 id="the-task">The task</h2>
+<p>The task is again to get the maven build to modify this page and mark it as completed. The logic to do this
+ is in the <code>pom.xml</code> in the root of the project. As in the last task the properties needed to modify the
+ page are in the file <code>/tasks/08_parents/pom.xml</code>. To get the task done add the pom from the root of the
+ project as a parent to the pom from the task. Then execute a <code>mvn clean verify</code> in the <strong>task folder</strong>.
+ If everything has been set up right the website should show the green checkmark again.</p></div>
         </div>
 
         <footer class="col-md-12">

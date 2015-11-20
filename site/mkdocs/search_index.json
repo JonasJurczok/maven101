@@ -162,7 +162,7 @@
         },
         {
             "location": "/08_parents/parents/index.html",
-            "text": "Parents\n\n\nAs already described before maven has defaults for everything. This is partially achieved by having poms\ninherit from each other. This works the same way as inheritance in Java. If you do not specify a parent\nexplicitly your pom will automatically inherit from the maven internal super pom. Exactly the same way as\nyour Java objects inherit from Object.\n\n\nSpeficy a parent\n\n\nParents are also identiefied by \ngroupId\n, \nartifactId\n and \nversion\n. You can put a parent tag everywhere\n in your project tag.",
+            "text": "Parents\n\n\nAs already described before maven has defaults for everything. This is partially achieved by having poms\ninherit from each other. This works the same way as inheritance in Java. If you do not specify a parent\nexplicitly your pom will automatically inherit from the maven internal super pom. Exactly the same way as\nyour Java objects inherit from Object.\n\n\nSpeficy a parent\n\n\nParents are also identiefied by \ngroupId\n, \nartifactId\n and \nversion\n. Additionally you should provide a\n\nrelativePath\n attribute which can be used to tell maven where to find the parent. If your parent is not\nin the same folder structure it should just be left empty. The parent can be specified anywhere in the\n\nproject\n tag of your pom.\n\n\nThe task\n\n\nThe task is again to get the maven build to modify this page and mark it as completed. The logic to do this\n is in the \npom.xml\n in the root of the project. As in the last task the properties needed to modify the\n page are in the file \n/tasks/08_parents/pom.xml\n. To get the task done add the pom from the root of the\n project as a parent to the pom from the task. Then execute a \nmvn clean verify\n in the \ntask folder\n.\n If everything has been set up right the website should show the green checkmark again.",
             "title": "Parents"
         },
         {
@@ -172,8 +172,13 @@
         },
         {
             "location": "/08_parents/parents/index.html#speficy-a-parent",
-            "text": "Parents are also identiefied by  groupId ,  artifactId  and  version . You can put a parent tag everywhere\n in your project tag.",
+            "text": "Parents are also identiefied by  groupId ,  artifactId  and  version . Additionally you should provide a relativePath  attribute which can be used to tell maven where to find the parent. If your parent is not\nin the same folder structure it should just be left empty. The parent can be specified anywhere in the project  tag of your pom.",
             "title": "Speficy a parent"
+        },
+        {
+            "location": "/08_parents/parents/index.html#the-task",
+            "text": "The task is again to get the maven build to modify this page and mark it as completed. The logic to do this\n is in the  pom.xml  in the root of the project. As in the last task the properties needed to modify the\n page are in the file  /tasks/08_parents/pom.xml . To get the task done add the pom from the root of the\n project as a parent to the pom from the task. Then execute a  mvn clean verify  in the  task folder .\n If everything has been set up right the website should show the green checkmark again.",
+            "title": "The task"
         }
     ]
 }
