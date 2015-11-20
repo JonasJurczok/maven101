@@ -19,3 +19,17 @@ The task is again to get the maven build to modify this page and mark it as comp
  page are in the file `/tasks/08_parents/pom.xml`. To get the task done add the pom from the root of the
  project as a parent to the pom from the task. Then execute a `mvn clean verify` in the **task folder**.
  If everything has been set up right the website should show the green checkmark again.
+
+## Dependency- and Pluginmanagement
+
+There are two special tags for parents that you should be aware of `dependencyManagement` and `pluginManagement`.
+
+They change the way maven inherits from your parent.
+
+If you just add dependencies in your parent with the `dependencies` tag they will automatically be included
+into your child project. This will lead to a lot of bloat. In contrast to that the `dependencyManagement`
+just **offers** dependencies to your child. You still have to specify them as usual and just can omit info
+already provided in the parent (like the version).
+
+The same thing is true for plugins. If you just use the `plugins` tag they will be executed for all childs.
+If you use `pluginManagement` they are just offered.

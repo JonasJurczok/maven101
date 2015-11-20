@@ -139,6 +139,8 @@
         
             <li><a href="#the-task">The task</a></li>
         
+            <li><a href="#dependency-and-pluginmanagement">Dependency- and Pluginmanagement</a></li>
+        
     
     </ul>
 </div></div>
@@ -159,7 +161,16 @@ in the same folder structure it should just be left empty. The parent can be spe
  is in the <code>pom.xml</code> in the root of the project. As in the last task the properties needed to modify the
  page are in the file <code>/tasks/08_parents/pom.xml</code>. To get the task done add the pom from the root of the
  project as a parent to the pom from the task. Then execute a <code>mvn clean verify</code> in the <strong>task folder</strong>.
- If everything has been set up right the website should show the green checkmark again.</p></div>
+ If everything has been set up right the website should show the green checkmark again.</p>
+<h2 id="dependency-and-pluginmanagement">Dependency- and Pluginmanagement</h2>
+<p>There are two special tags for parents that you should be aware of <code>dependencyManagement</code> and <code>pluginManagement</code>.</p>
+<p>They change the way maven inherits from your parent.</p>
+<p>If you just add dependencies in your parent with the <code>dependencies</code> tag they will automatically be included
+into your child project. This will lead to a lot of bloat. In contrast to that the <code>dependencyManagement</code>
+just <strong>offers</strong> dependencies to your child. You still have to specify them as usual and just can omit info
+already provided in the parent (like the version).</p>
+<p>The same thing is true for plugins. If you just use the <code>plugins</code> tag they will be executed for all childs.
+If you use <code>pluginManagement</code> they are just offered.</p></div>
         </div>
 
         <footer class="col-md-12">
