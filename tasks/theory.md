@@ -135,7 +135,7 @@ files from the previous builds and then build and verify the current state of th
 
 One important aspect of maven is the principle of [Convention over Configuration](https://en.wikipedia.org/wiki/Convention_over_configuration).
 This basically boils down to "There is a default for everything". Technically this is implemented in a way similar to Java.
-Every maven configuration inherits from an invisible super parent (unless a specific parent is specified. See (TODO-> parents) for details).
+Every maven configuration inherits from an invisible super parent (unless a specific parent is specified. See [parents](08_parents/parents.md) for details).
 In your actual pom file your basically just overwrite and extend the default settings.
 
 But this principle is not just limited to the configuration. It also affects the folder structure.

@@ -11,7 +11,7 @@ The `integration-test` phase is used by plugins like the `failsafe-plugin` to ru
 usually involve deploying the artifact to an application server or starting up a database.
 
 The interesting aspect of this is that your build will fail if your tests fail, thus preventing you from
-receiving an artifact in the end. This way you cannot (even by accident or thorugh an automated pipeline) deploy
+receiving an artifact in the end. This way you cannot (even by accident or through an automated pipeline) deploy
 something that has failing tests. **This of course only works if your tests cover all your use cases ;)**
 
 Again, the task is to make the project build work using `mvn clean verify -Ptask4`.
