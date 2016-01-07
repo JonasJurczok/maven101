@@ -153,7 +153,7 @@
 The <code>integration-test</code> phase is used by plugins like the <code>failsafe-plugin</code> to run more complex tests that
 usually involve deploying the artifact to an application server or starting up a database.</p>
 <p>The interesting aspect of this is that your build will fail if your tests fail, thus preventing you from
-receiving an artifact in the end. This way you cannot (even by accident or thorugh an automated pipeline) deploy
+receiving an artifact in the end. This way you cannot (even by accident or through an automated pipeline) deploy
 something that has failing tests. <strong>This of course only works if your tests cover all your use cases ;)</strong></p>
 <p>Again, the task is to make the project build work using <code>mvn clean verify -Ptask4</code>.
 Also verify that you see why it is failing in the first place and also check the target folder
