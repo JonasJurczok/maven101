@@ -22,7 +22,7 @@
 
 			<properties>
 				<task.id>basic-project-setup</task.id>
-				<task.title>Basic Project Setup</task.title>
+				<task.title>Basic project setup</task.title>
 				<task.path>01_basic_setup/basic_setup/index.html</task.path>
 			</properties>
 
